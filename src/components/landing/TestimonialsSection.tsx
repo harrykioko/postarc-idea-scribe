@@ -2,23 +2,20 @@
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Sarah Chen",
+      name: "Sarah C.",
       title: "Marketing Director",
-      company: "TechFlow",
       quote: "PostArc transformed how I approach LinkedIn content. What used to take hours now takes minutes.",
       avatar: "SC"
     },
     {
-      name: "Marcus Johnson", 
+      name: "Marcus J.", 
       title: "Startup Founder",
-      company: "InnovateLab",
       quote: "The AI understands my voice perfectly. My engagement has tripled since using PostArc.",
       avatar: "MJ"
     },
     {
-      name: "Lisa Rodriguez",
+      name: "Lisa R.",
       title: "Sales Leader",
-      company: "GrowthCorp", 
       quote: "Finally, a tool that helps me share insights without spending my entire weekend writing posts.",
       avatar: "LR"
     }
@@ -60,7 +57,7 @@ export const TestimonialsSection = () => {
                       {testimonial.name}
                     </h4>
                     <p className="text-sm text-slate-500">
-                      {testimonial.title} at {testimonial.company}
+                      {testimonial.title}
                     </p>
                   </div>
                 </div>
