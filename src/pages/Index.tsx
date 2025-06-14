@@ -14,10 +14,16 @@ const Index = () => {
       <HeroSection />
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/5 to-transparent pointer-events-none" />
-        <HowItWorksSection />
+        <div id="how-it-works">
+          <HowItWorksSection />
+        </div>
       </div>
-      <LiveDemoSection />
-      <PricingSection />
+      <div id="demo-section">
+        <LiveDemoSection />
+      </div>
+      <div id="pricing-section">
+        <PricingSection />
+      </div>
       <TestimonialsSection />
       <FAQSection />
       <FinalCTASection />
