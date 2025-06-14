@@ -1,0 +1,48 @@
+
+import { Button } from "@/components/ui/button";
+
+export const FinalCTASection = () => {
+  const scrollToDemo = () => {
+    document.getElementById('demo-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section className="py-24 bg-gradient-to-br from-[#0B1C34] via-[#0B1C34] to-[#0a1a30] relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,194,0.1)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
+      
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Shape ideas.{" "}
+            <span className="bg-gradient-to-r from-[#00FFC2] to-blue-400 bg-clip-text text-transparent">
+              Share authority.
+            </span>
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed">
+            Try PostArc free and transform how you create LinkedIn content
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              onClick={scrollToDemo}
+              size="lg"
+              className="bg-[#00FFC2] hover:bg-[#00e6b0] text-slate-900 font-semibold px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,255,194,0.3)]"
+            >
+              Try the Demo
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-slate-400 text-slate-300 hover:bg-slate-800 hover:text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
+            >
+              Create a Free Account
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
