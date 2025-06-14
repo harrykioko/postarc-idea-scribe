@@ -15,9 +15,9 @@ export const FinalCTASection = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Shape ideas.{" "}
+            You have ideas.{" "}
             <span className="bg-gradient-to-r from-[#00FFC2] to-blue-400 bg-clip-text text-transparent">
-              Share authority.
+              Let's get them posted.
             </span>
           </h2>
           
@@ -36,7 +36,7 @@ export const FinalCTASection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-slate-400 text-slate-300 hover:bg-slate-800 hover:text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
+              className="border-slate-400 text-slate-300 hover:bg-slate-800 hover:text-white hover:border-[#00FFC2] hover:shadow-[0_0_20px_rgba(0,255,194,0.2)] px-8 py-4 text-lg rounded-full transition-all duration-300"
             >
               Create a Free Account
             </Button>

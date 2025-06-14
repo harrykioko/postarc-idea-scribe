@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Sparkles, Compass, TrendingUp } from "lucide-react";
 
 export const LiveDemoSection = () => {
   const [demoCount, setDemoCount] = useState(3);
@@ -10,9 +11,9 @@ export const LiveDemoSection = () => {
   const [showPost, setShowPost] = useState(false);
 
   const suggestions = [
-    "AI + healthcare",
-    "Lessons from failure", 
-    "Remote work myths"
+    { text: "AI + healthcare", icon: Sparkles },
+    { text: "Lessons from failure", icon: Compass }, 
+    { text: "Remote work myths", icon: TrendingUp }
   ];
 
   const handleGenerate = () => {
@@ -29,7 +30,7 @@ export const LiveDemoSection = () => {
   return (
     <section id="demo-section" className="py-24 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Try It Live
           </h2>
@@ -40,40 +41,47 @@ export const LiveDemoSection = () => {
         
         <div className="max-w-2xl mx-auto">
           {/* Demo Input Box */}
-          <div className="backdrop-blur-lg bg-white/70 border border-white/50 rounded-3xl p-8 shadow-2xl mb-8 hover:shadow-[0_0_50px_rgba(0,255,194,0.1)] transition-all duration-300">
-            <div className="flex gap-4 mb-4">
-              <Input
-                placeholder="e.g. Trends in AI regulation"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                className="flex-1 rounded-full border-slate-200 focus:border-[#00FFC2] focus:ring-[#00FFC2] py-3 px-6 text-lg"
-              />
-              <Button
-                onClick={handleGenerate}
-                disabled={demoCount === 0}
-                className="bg-[#00FFC2] hover:bg-[#00e6b0] text-slate-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Generate Post
-              </Button>
-            </div>
-            
-            {/* Suggestion Chips */}
-            <div className="flex flex-wrap gap-2 justify-center mb-4">
-              {suggestions.map((suggestion, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="cursor-pointer hover:bg-[#00FFC2]/20 hover:text-[#00FFC2] transition-colors px-3 py-1"
-                  onClick={() => setInputValue(suggestion)}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00FFC2]/20 to-blue-400/20 rounded-3xl blur-xl" />
+            <div className="relative backdrop-blur-2xl bg-white/70 border border-white/60 rounded-3xl p-8 shadow-2xl mb-8 hover:shadow-[0_0_50px_rgba(0,255,194,0.15)] transition-all duration-500">
+              <div className="flex gap-4 mb-6">
+                <Input
+                  placeholder="e.g. Trends in AI regulation"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  className="flex-1 rounded-full border-slate-200 focus:border-[#00FFC2] focus:ring-[#00FFC2] focus:shadow-[0_0_15px_rgba(0,255,194,0.2)] py-3 px-6 text-lg backdrop-blur-sm"
+                />
+                <Button
+                  onClick={handleGenerate}
+                  disabled={demoCount === 0}
+                  className="bg-[#00FFC2] hover:bg-[#00e6b0] text-slate-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,194,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {suggestion}
-                </Badge>
-              ))}
-            </div>
-            
-            {/* Counter */}
-            <div className="text-center text-sm text-slate-500">
-              You have <span className="font-semibold text-[#00FFC2]">{demoCount} free demo posts</span> remaining
+                  Generate Post
+                </Button>
+              </div>
+              
+              {/* Suggestion Chips */}
+              <div className="flex flex-wrap gap-3 justify-center mb-6">
+                {suggestions.map((suggestion, index) => {
+                  const IconComponent = suggestion.icon;
+                  return (
+                    <Badge
+                      key={index}
+                      variant="secondary"
+                      className="cursor-pointer hover:bg-[#00FFC2]/20 hover:text-[#00FFC2] hover:shadow-[0_0_15px_rgba(0,255,194,0.2)] hover:scale-105 transition-all duration-300 px-4 py-2 flex items-center gap-2"
+                      onClick={() => setInputValue(suggestion.text)}
+                    >
+                      <IconComponent className="w-4 h-4" />
+                      {suggestion.text}
+                    </Badge>
+                  );
+                })}
+              </div>
+              
+              {/* Counter */}
+              <div className="text-center text-sm text-slate-500">
+                You have <span className="font-semibold text-[#00FFC2] text-base">{demoCount} free demo posts</span> remaining
+              </div>
             </div>
           </div>
           

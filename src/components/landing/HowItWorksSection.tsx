@@ -26,7 +26,7 @@ export const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-gradient-to-b from-slate-50 to-white relative">
+    <section id="how-it-works" className="py-24 bg-gradient-to-b from-[#F9FBFF] to-white relative">
       {/* Curved Divider */}
       <div className="absolute -top-1 left-0 w-full overflow-hidden">
         <svg className="relative block w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -35,7 +35,7 @@ export const HowItWorksSection = () => {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             How It Works
           </h2>
@@ -44,21 +44,27 @@ export const HowItWorksSection = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             return (
-              <div key={index} className="text-center group">
-                <div className="relative mx-auto w-20 h-20 mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00FFC2]/20 to-blue-400/20 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-                  <div className="relative bg-white rounded-2xl w-full h-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 border border-slate-100">
-                    <IconComponent className="w-8 h-8 text-[#00FFC2]" />
+              <div 
+                key={index} 
+                className="text-center group"
+                style={{
+                  animation: `fade-in 0.6s ease-out ${index * 0.2}s both`
+                }}
+              >
+                <div className="relative mx-auto w-24 h-24 mb-8">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00FFC2]/20 to-blue-400/20 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-300" />
+                  <div className="relative bg-white rounded-3xl w-full h-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 border border-slate-100 backdrop-blur-sm">
+                    <IconComponent className="w-10 h-10 text-[#00FFC2]" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">
                   {step.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed max-w-xs mx-auto">
                   {step.description}
                 </p>
               </div>
@@ -71,7 +77,7 @@ export const HowItWorksSection = () => {
             onClick={scrollToDemo}
             variant="outline"
             size="lg"
-            className="border-[#00FFC2] text-[#00FFC2] hover:bg-[#00FFC2] hover:text-slate-900 px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+            className="border-[#00FFC2] text-[#00FFC2] hover:bg-[#00FFC2] hover:text-slate-900 hover:shadow-[0_0_25px_rgba(0,255,194,0.3)] px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
           >
             See a live example
           </Button>

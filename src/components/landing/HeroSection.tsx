@@ -22,14 +22,14 @@ export const HeroSection = () => {
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Turn your ideas into{" "}
-            <span className="bg-gradient-to-r from-[#00FFC2] to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#00FFC2] via-[#00e6b0] to-[#00FFC2] bg-clip-text text-transparent animate-pulse bg-[length:200%_100%] bg-[position:0%_50%] hover:animate-none hover:bg-[position:100%_50%] transition-all duration-1000">
               LinkedIn posts
             </span>{" "}
             in seconds
           </h1>
           
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-medium">
             Shape ideas. Share authority. Try our AI demo – no sign-up required.
           </p>
           
@@ -46,7 +46,7 @@ export const HeroSection = () => {
               onClick={scrollToHowItWorks}
               variant="outline"
               size="lg"
-              className="border-slate-400 text-slate-300 hover:bg-slate-800 hover:text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
+              className="border-slate-400 text-slate-300 hover:bg-slate-800 hover:text-white hover:border-[#00FFC2] hover:shadow-[0_0_20px_rgba(0,255,194,0.2)] px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105"
             >
               Watch it in action
             </Button>
@@ -54,7 +54,7 @@ export const HeroSection = () => {
           
           {/* Sample Post Card */}
           <div className="max-w-md mx-auto">
-            <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-6 shadow-2xl hover:shadow-[0_0_40px_rgba(0,255,194,0.2)] transition-all duration-300">
+            <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-6 shadow-2xl hover:shadow-[0_0_40px_rgba(0,255,194,0.2)] transition-all duration-500 animate-fade-in delay-500 hover:scale-105">
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00FFC2] to-blue-400" />
                 <div>
@@ -79,8 +79,10 @@ export const HeroSection = () => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-slate-400" />
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="animate-pulse">
+          <ArrowDown className="w-6 h-6 text-slate-400" />
+        </div>
       </div>
     </section>
   );
