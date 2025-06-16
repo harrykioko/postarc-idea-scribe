@@ -1,8 +1,20 @@
 
 export const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 py-12">
-      <div className="container mx-auto px-6">
+    <footer className="relative text-slate-300 py-12 overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/63dc25eb-2892-4bb4-afb0-7279ac87e171.png')`
+        }}
+      />
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" />
+      
+      {/* Content */}
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="md:col-span-2">
