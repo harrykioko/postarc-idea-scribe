@@ -1,7 +1,7 @@
 
 export const Footer = () => {
   return (
-    <footer className="relative text-slate-300 pb-12 overflow-hidden">
+    <footer className="relative text-slate-300 py-12 overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
