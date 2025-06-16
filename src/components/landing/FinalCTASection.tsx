@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 
 export const FinalCTASection = () => {
@@ -39,7 +40,7 @@ export const FinalCTASection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="border-slate-400 text-slate-300 hover:bg-slate-800 hover:text-white hover:border-[#00FFC2] hover:shadow-[0_0_20px_rgba(0,255,194,0.2)] px-8 py-4 text-lg rounded-full transition-all duration-300"
+              className="bg-slate-800/60 border-slate-300 border-2 text-white hover:bg-slate-700 hover:text-white hover:border-[#00FFC2] hover:shadow-[0_0_20px_rgba(0,255,194,0.2)] px-8 py-4 text-lg rounded-full transition-all duration-300"
             >
               Create a Free Account
             </Button>
@@ -49,3 +50,4 @@ export const FinalCTASection = () => {
     </section>
   );
 };
+
