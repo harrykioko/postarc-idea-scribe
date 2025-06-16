@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 export const FinalCTASection = () => {
@@ -7,7 +6,18 @@ export const FinalCTASection = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-[#0B1C34] via-[#0B1C34] to-[#0a1a30] relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/63dc25eb-2892-4bb4-afb0-7279ac87e171.png')`
+        }}
+      />
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" />
+      
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,194,0.1)_0%,transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
