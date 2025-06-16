@@ -26,15 +26,52 @@ export const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-gradient-to-b from-[#F9FBFF] to-white relative">
-      {/* Curved Divider */}
+    <section id="how-it-works" className="relative bg-gradient-to-b from-[#F9FBFF] to-white">
+      {/* Enhanced Curved Divider */}
       <div className="absolute -top-1 left-0 w-full overflow-hidden">
-        <svg className="relative block w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#0B1C34" fillOpacity="1"></path>
+        {/* Main wave shape */}
+        <svg className="relative block w-full h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#0B1C34" stopOpacity="1"/>
+              <stop offset="70%" stopColor="#142F4A" stopOpacity="0.8"/>
+              <stop offset="100%" stopColor="#051424" stopOpacity="0.6"/>
+            </linearGradient>
+            <filter id="waveGlow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path 
+            d="M0,0V60c50,25,120,35,180,28C260,82,340,45,420,42c80-3,160,20,240,25c80,5,160-10,240-8c80,2,160,18,240,20c80,2,160-8,240-15V0Z" 
+            fill="url(#waveGradient)" 
+            filter="url(#waveGlow)"
+            className="animate-fade-in"
+          />
         </svg>
+        
+        {/* Gradient overlay for smooth transition */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1C34]/30 via-[#142F4A]/15 to-transparent h-24" />
+        
+        {/* Glass-like highlight edge */}
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00FFC2]/20 to-transparent opacity-60" />
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      {/* Background depth layers */}
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#0B1C34]/10 via-[#F9FBFF]/50 to-transparent pointer-events-none" />
+      
+      <div className="container mx-auto px-6 relative z-10 pt-20">
+        {/* Section anchor chip */}
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#00FFC2]/20 rounded-full px-4 py-2 text-sm text-slate-600 shadow-sm animate-fade-in">
+            <div className="w-2 h-2 bg-[#00FFC2] rounded-full animate-pulse" />
+            Step-by-step
+          </div>
+        </div>
+        
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             How It Works
@@ -72,7 +109,7 @@ export const HowItWorksSection = () => {
           })}
         </div>
         
-        <div className="text-center">
+        <div className="text-center pb-24">
           <Button
             onClick={scrollToDemo}
             variant="outline"
