@@ -13,11 +13,17 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col relative overflow-hidden bg-gradient-to-br from-[#0B1C34] via-[#142F4A] to-[#051424]">
-      {/* Enhanced Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,194,0.08)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.08)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 bg-[conic-gradient(from_230deg_at_50%_50%,transparent_0deg,rgba(0,255,194,0.03)_120deg,transparent_240deg)]" />
+    <section className="min-h-screen flex flex-col relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/63dc25eb-2892-4bb4-afb0-7279ac87e171.png')`
+        }}
+      />
+      
+      {/* Optional overlay for text readability */}
+      <div className="absolute inset-0 bg-black/20" />
       
       {/* Navigation */}
       <Navigation />
