@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 export const FinalCTASection = () => {
@@ -6,7 +7,7 @@ export const FinalCTASection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="pt-24 pb-0 relative overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -23,7 +24,7 @@ export const FinalCTASection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1)_0%,transparent_50%)]" />
       
       <div className="container mx-auto px-6 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mb-24">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             You have ideas.{" "}
             <span className="bg-gradient-to-r from-[#00FFC2] to-blue-400 bg-clip-text text-transparent">
