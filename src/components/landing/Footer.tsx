@@ -1,15 +1,7 @@
 
 export const Footer = () => {
   return (
-    <footer className="relative text-slate-300 py-12 overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/lovable-uploads/63dc25eb-2892-4bb4-afb0-7279ac87e171.png')`
-        }}
-      />
-      
+    <footer className="relative text-slate-300 py-12">
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />
       

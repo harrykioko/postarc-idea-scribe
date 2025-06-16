@@ -26,8 +26,20 @@ const Index = () => {
       </div>
       <TestimonialsSection />
       <FAQSection />
-      <FinalCTASection />
-      <Footer />
+      
+      {/* Continuous background wrapper for Final CTA and Footer */}
+      <div className="relative overflow-hidden">
+        {/* Shared Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/63dc25eb-2892-4bb4-afb0-7279ac87e171.png')`
+          }}
+        />
+        
+        <FinalCTASection />
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 export const FinalCTASection = () => {
@@ -6,15 +7,7 @@ export const FinalCTASection = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/lovable-uploads/63dc25eb-2892-4bb4-afb0-7279ac87e171.png')`
-        }}
-      />
-      
+    <section className="py-24 relative">
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />
       
